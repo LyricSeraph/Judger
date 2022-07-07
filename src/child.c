@@ -163,6 +163,11 @@ void child_process(FILE *log_fp, struct config *_config) {
                 CHILD_ERROR_EXIT(LOAD_SECCOMP_FAILED);
             }
         }
+        else if (strcmp("python_file_io", _config->seccomp_rule_name) == 0) {
+            if (python_file_io_seccomp_rules(_config) != SUCCESS ) {
+                CHILD_ERROR_EXIT(LOAD_SECCOMP_FAILED);
+            }
+        }
         // other rules
         else {
             // rule does not exist

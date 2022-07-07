@@ -68,6 +68,6 @@ int _c_cpp_seccomp_rules(struct config *_config, bool allow_write_file) {
 }
 
 
-int c_cpp_seccomp_rules(struct config *_config, bool allow_write_file) {
+int c_cpp_seccomp_rules(struct config *_config) {
     return _c_cpp_seccomp_rules(_config, false);
 }
